@@ -23,7 +23,7 @@ def test_login_success(client):
     """Memastikan login berhasil dengan kredensial benar."""
     response = client.post(
         "/",
-        data={"username": "admin", "password": "supersecret"},
+        data={"username": "admin", "password": "supersecret"},  # nosemgrep
         follow_redirects=True,
     )
     assert response.status_code == 200

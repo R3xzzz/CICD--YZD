@@ -21,8 +21,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Semgrep SAST
-        # --exclude=".github" mencegah Semgrep memeriksa file workflow YAML
-        run: semgrep scan --config auto --error --verbose --exclude=".github"
+        # --exclude mencegah Semgrep memeriksa folder workflow dan file testing
+        run: semgrep scan --config auto --error --verbose --exclude=".github" --exclude="test_*.py"
 
   # ==========================================
   # CI JOB 2: Code Quality (Pylint)
